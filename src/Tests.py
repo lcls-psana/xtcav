@@ -1,5 +1,6 @@
+from __future__ import print_function
 #Test GenerateDarkBackground
-print "Testing GenerateDarkBackground"
+print("Testing GenerateDarkBackground")
 from GenerateDarkBackground import *
 GDB=GenerateDarkBackground();
 GDB.experiment='amo86815'
@@ -7,10 +8,10 @@ GDB.runs='70'                       #The run number is irrelevant
 GDB.maxshots=10
 GDB.SetValidityRange(8000,8001)
 GDB.Generate(savetofile=False);  #In the test we do everything but saving
-print "Test GenerateDarkBackground successful"
+print("Test GenerateDarkBackground successful")
 
 #Test GenerateLasingOffReference
-print "Testing GenerateLasingOffReference"
+print("Testing GenerateLasingOffReference")
 from GenerateLasingOffReference import *
 GLOC=GenerateLasingOffReference();
 GLOC.experiment='amo86815'
@@ -23,11 +24,11 @@ splitmethods=['contourLabel','autothreshold']
 for splitmethod in splitmethods:        
     GLOC.islandsplitmethod=splitmethod
     GLOC.Generate(savetofile=False);  #In the test we do everything but saving
-    print "Test GenerateLasingOffReference successful for method: %s"%splitmethod
+    print("Test GenerateLasingOffReference successful for method: %s"%splitmethod)
 
 
 #Test ShotToShotCharacterization
-print "Testing ShotToShotCharacterization"
+print("Testing ShotToShotCharacterization")
 
 import psana
 from ShotToShotCharacterization import *
@@ -91,4 +92,4 @@ for splitmethod in splitmethods:
     else:
         print ("Full results not calculated for method: %s"%splitmethod)       
         
-print "Tests finished"
+print("Tests finished")

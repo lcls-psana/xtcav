@@ -1,3 +1,4 @@
+from __future__ import print_function
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 
@@ -41,10 +42,10 @@ class GenerateDarkBackground(object):
         """
         After setting all the parameters, this method has to be called to generate the dark reference and save it in the proper location. It not set, the validity range for the reference will go from the first run number used to generate the reference and the last run.
         """
-        print 'dark background reference'
-        print '\t Experiment: %s' % self._experiment
-        print '\t Runs: %s' % self._runs
-        print '\t Valid shots to process: %d' % self._maxshots
+        print('dark background reference')
+        print('\t Experiment: %s' % self._experiment)
+        print('\t Runs: %s' % self._runs)
+        print('\t Valid shots to process: %d' % self._maxshots)
         
         #Loading the dataset from the "dark" run, this way of working should be compatible with both xtc and hdf5 files
         dataSource=psana.DataSource("exp=%s:run=%s:idx" % (self._experiment,self._runs))

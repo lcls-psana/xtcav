@@ -1,3 +1,4 @@
+from __future__ import print_function
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 #Script for the retrieval of the pulses shot to shot
@@ -267,7 +268,7 @@ class ShotToShotCharacterization(object):
 
         img,ROI=xtu.FindROI(img,ROI,self._roiwaistthres,self._roiexpand)                  #Crop the image, the ROI struct is changed. It also add an extra dimension to the image so the array can store multiple images corresponding to different bunches
         if ROI['xN']<3 or ROI['yN']<3:
-            print 'ROI too small',ROI['xN'],ROI['yN']
+            print('ROI too small',ROI['xN'],ROI['yN'])
             return False
         img=xtu.SplitImage(img,self._nb, self._islandsplitmethod,self._islandsplitpar1,self._islandsplitpar2)
 

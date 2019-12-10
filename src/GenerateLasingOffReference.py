@@ -1,3 +1,4 @@
+from __future__ import print_function
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 # revised 31/07/15 by andr0s & polo5 to include parallel processing
 import os
@@ -69,12 +70,12 @@ class GenerateLasingOffReference(object):
         """
         After setting all the parameters, this method has to be called to generate the lasing off reference and save it in the proper location. It not set, the validity range for the reference will go from the first run number used to generate the reference and the last run.
         """
-        print 'Lasing off reference'
-        print '\t Experiment: %s' % self._experiment
-        print '\t Runs: %s' % self._runs
-        print '\t Number of bunches: %d' % self._nb
-        print '\t Valid shots to process: %d' % self._maxshots
-        print '\t Dark reference run: %s' % self._darkreferencepath
+        print('Lasing off reference')
+        print('\t Experiment: %s' % self._experiment)
+        print('\t Runs: %s' % self._runs)
+        print('\t Number of bunches: %d' % self._nb)
+        print('\t Valid shots to process: %d' % self._maxshots)
+        print('\t Dark reference run: %s' % self._darkreferencepath)
         
         #Loading the data, this way of working should be compatible with both xtc and hdf5 files
         dataSource=psana.DataSource("exp=%s:run=%s:idx" % (self._experiment,self._runs))
@@ -203,7 +204,7 @@ class GenerateLasingOffReference(object):
                         continue
                     img,ROI=xtu.FindROI(img,ROI,self._roiwaistthres,self._roiexpand)                  #Crop the image, the ROI struct is changed. It also add an extra dimension to the image so the array can store multiple images corresponding to different bunches
                     if ROI['xN']<3 or ROI['yN']<3:
-                        print 'ROI too small',ROI['xN'],ROI['yN']
+                        print('ROI too small',ROI['xN'],ROI['yN'])
                         continue
 
                     img = xtu.SplitImage(img,self._nb,self._islandsplitmethod,self._islandsplitpar1,self._islandsplitpar2)#new

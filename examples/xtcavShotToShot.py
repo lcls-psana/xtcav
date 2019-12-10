@@ -1,3 +1,4 @@
+from __future__ import print_function
 import psana
 from xtcav.ShotToShotCharacterization import *
 
@@ -25,8 +26,8 @@ for r,run in enumerate(dataSource.runs()):
         agreement,ok2=XTCAVRetrieval.ReconstructionAgreement()      
 
         if (ok1 and ok2):
-            print "%d/%d" % (n_r,maxshots) #Debugging purposes, will be removed
-            print 'Agreement: %g %% Maximum power: %g GW' %(agreement*100,np.amax(power))
+            print("%d/%d" % (n_r,maxshots)) #Debugging purposes, will be removed
+            print('Agreement: %g %% Maximum power: %g GW' %(agreement*100,np.amax(power)))
 
         n_r=n_r+1            
 
