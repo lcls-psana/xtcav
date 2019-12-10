@@ -20,7 +20,7 @@ def getLasingOffShot(XTCAVRetrieval,expt):
     profs = lor.averagedProfiles
 
     ds_lasingoff = DataSource('exp=%s:run=%d:idx'%(expt,lor.runs[0]))
-    run = ds_lasingoff.runs().next()
+    run = next(ds_lasingoff.runs())
     times = run.times()
     time = profs['eventTime'][ibunch][group]
     fid = profs['eventFid'][ibunch][group]

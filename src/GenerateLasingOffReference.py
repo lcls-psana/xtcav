@@ -105,7 +105,7 @@ class GenerateLasingOffReference(object):
         #for r,run in enumerate(dataSource.runs()):
         for r in [0]: 
             
-            run=dataSource.runs().next(); #This line and the previous line are a temporal hack to go only through the first run, that avoids an unexpected block when calling next at the iterator, when there are not remaining runs.
+            run=next(dataSource.runs()); #This line and the previous line are a temporal hack to go only through the first run, that avoids an unexpected block when calling next at the iterator, when there are not remaining runs.
             runs = numpy.append(runs,run.run());
             n_r=0 #Counter for the total number of xtcav images processed within the run        
             #for e, evt in enumerate(run.events()):

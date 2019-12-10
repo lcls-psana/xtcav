@@ -43,7 +43,7 @@ XTCAVRetrieval.SetDataSource(dataSource)
 XTCAVRetrieval.nb=2
 XTCAVRetrieval.snrfilter=3
 
-run=dataSource.runs().next()
+run=next(dataSource.runs())
 times=times = run.times()
 evt=run.event(times[4])  
 
