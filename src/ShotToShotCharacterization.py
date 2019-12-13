@@ -1,4 +1,5 @@
 from __future__ import print_function
+from __future__ import division
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 #Script for the retrieval of the pulses shot to shot

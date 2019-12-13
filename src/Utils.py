@@ -1,3 +1,4 @@
+from __future__ import division
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 #Functions related with the XTCAV pulse retrieval
@@ -679,8 +680,8 @@ def HorizontalLineSplitting(image):
     """
     
     outimage=np.zeros((2,image.shape[0],image.shape[1]))
-    x=range(image.shape[1])
-    y=range(image.shape[0])
+    x=list(range(image.shape[1]))
+    y=list(range(image.shape[0]))
     x0,y0=GetCenterOfMass(image[:,:],x,y)
     outimage[0,0:round(y0),:]=image[0:round(y0),:]
     outimage[1,round(y0):,:]=image[round(y0):,:]  
@@ -754,8 +755,8 @@ def OptimalSplittingLine(image):
     Nx=image.shape[1]
     Ny=image.shape[0]
     
-    x=range(Nx)
-    y=range(Ny)
+    x=list(range(Nx))
+    y=list(range(Ny))
     x0,y0=GetCenterOfMass(image,x,y)
     
     splitline=np.zeros(Nx, dtype=np.int32)
@@ -770,7 +771,7 @@ def OptimalSplittingLine(image):
     #Each vertical slice of the right half of the image (left to right) from the x center of masses and then 
     #each vertical slice of the left half of the image (right to left) from the x center of masses  
     startPoint=y0
-    for i in (range(x0,Nx)+range(x0-1,-1,-1)):
+    for i in (list(range(x0,Nx))+list(range(x0-1,-1,-1))):
         #Find the point towards higher indices when the value starts to increase
         top=startPoint;    
         while (top<(Ny-1) and fimage[top,i]>=fimage[top+1,i]):
@@ -810,8 +811,8 @@ def IslandSplitting(image,N):
     #Use the center of mass as a starting point
     Nx=image.shape[1]
     Ny=image.shape[0]
-    x=range(Nx)
-    y=range(Ny)
+    x=list(range(Nx))
+    y=list(range(Ny))
     
     #Get a bool image with just zeros and ones
     imgbool=image>0
@@ -895,8 +896,8 @@ def IslandSplittingAutoThreshold(image,N):
     
     Nx=image.shape[1]
     Ny=image.shape[0]
-    x=range(Nx)
-    y=range(Ny)
+    x=list(range(Nx))
+    y=list(range(Ny))
     
     #Minimum and maximum edge for the threshold to be set
     thres0=image[image!=0].min()

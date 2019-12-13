@@ -1,4 +1,5 @@
 from __future__ import print_function
+from __future__ import division
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 # revised 31/07/15 by andr0s & polo5 to include parallel processing
 import os

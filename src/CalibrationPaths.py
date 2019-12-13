@@ -2,7 +2,7 @@ from psana import *
 from PSCalib.CalibFileFinder import CalibFileFinder
 import os
 
-class CalibrationPaths:
+class CalibrationPaths(object):
     def __init__(self,env,calibdir=''):
         self.env = env
         self.calibgroup = 'Xtcav::CalibV1'
