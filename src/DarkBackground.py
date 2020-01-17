@@ -1,7 +1,8 @@
+from __future__ import absolute_import
 
 import numpy
-from Constants import Load as constLoad
-from Constants import Save as constSave
+from .Constants import Load as constLoad
+from .Constants import Save as constSave
 
 class DarkBackground(object):
     def __init__(self):

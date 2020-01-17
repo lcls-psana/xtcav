@@ -1,5 +1,6 @@
 from __future__ import print_function
 from __future__ import division
+from __future__ import absolute_import
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 #Script for the retrieval of the pulses shot to shot
@@ -14,11 +15,11 @@ import sys
 import getopt
 import math
 import warnings
-import Utils as xtu
-import UtilsPsana as xtup
-from DarkBackground import *
-from LasingOffReference import *
-from CalibrationPaths import *
+from . import Utils as xtu
+from . import UtilsPsana as xtup
+from .DarkBackground import *
+from .LasingOffReference import *
+from .CalibrationPaths import *
 
 
 class ShotToShotCharacterization(object):

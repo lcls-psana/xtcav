@@ -1,5 +1,6 @@
 from __future__ import print_function
 from __future__ import division
+from __future__ import absolute_import
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 # revised 31/07/15 by andr0s & polo5 to include parallel processing
 import os
@@ -12,11 +13,11 @@ import IPython
 import sys
 import getopt
 import warnings
-import Utils as xtu
-import UtilsPsana as xtup
-from DarkBackground import *
-from LasingOffReference import *
-from CalibrationPaths import *
+from . import Utils as xtu
+from . import UtilsPsana as xtup
+from .DarkBackground import *
+from .LasingOffReference import *
+from .CalibrationPaths import *
 
 # PP imports
 from mpi4py import MPI

@@ -1,7 +1,8 @@
 from __future__ import print_function
+from __future__ import absolute_import
 #Test GenerateDarkBackground
 print("Testing GenerateDarkBackground")
-from GenerateDarkBackground import *
+from .GenerateDarkBackground import *
 GDB=GenerateDarkBackground();
 GDB.experiment='amo86815'
 GDB.runs='70'                       #The run number is irrelevant
@@ -12,7 +13,7 @@ print("Test GenerateDarkBackground successful")
 
 #Test GenerateLasingOffReference
 print("Testing GenerateLasingOffReference")
-from GenerateLasingOffReference import *
+from .GenerateLasingOffReference import *
 GLOC=GenerateLasingOffReference();
 GLOC.experiment='amo86815'
 GLOC.runs='70'
@@ -31,7 +32,7 @@ for splitmethod in splitmethods:
 print("Testing ShotToShotCharacterization")
 
 import psana
-from ShotToShotCharacterization import *
+from .ShotToShotCharacterization import *
 
 exp='amo86815'
 runnum=70
