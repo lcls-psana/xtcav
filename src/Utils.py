@@ -1,4 +1,4 @@
-from __future__ import division
+
 #(c) Coded by Alvaro Sanchez-Gonzalez 2014
 
 #Functions related with the XTCAV pulse retrieval
@@ -196,10 +196,10 @@ def FindROI(image,ROI,threshold,expandfactor):
     overthreshold=np.nonzero(profileX>=thres)[0];           #Indices that correspond to values higher than the threshold
     center=(overthreshold[0]+overthreshold[-1])/2;          #Middle position between the first value and the last value higher than th threshold
     width=(overthreshold[-1]-overthreshold[0]+1)*expandfactor;  #Total width after applying the expand factor
-    ind1X=np.round(center-width/2).astype(np.int)                         #Index on the left side form the center
-    ind2X=np.round(center+width/2).astype(np.int)                         #Index on the right side form the center
-    ind1X=np.amax([0,ind1X]).astype(np.int)                                #Check that the index is not too negative
-    ind2X=np.amin([profileX.size,ind2X]).astype(np.int)                    #Check that the index is not too high
+    ind1X=np.round(center-width/2).astype(np.int32)                         #Index on the left side form the center
+    ind2X=np.round(center+width/2).astype(np.int32)                         #Index on the right side form the center
+    ind1X=np.amax([0,ind1X]).astype(np.int32)                                #Check that the index is not too negative
+    ind2X=np.amin([profileX.size,ind2X]).astype(np.int32)                    #Check that the index is not too high
     
     #Same for y
     maxpos=np.argmax(profileY);
@@ -207,10 +207,10 @@ def FindROI(image,ROI,threshold,expandfactor):
     overthreshold=np.nonzero(profileY>=thres)[0];
     center=(overthreshold[0]+overthreshold[-1])/2;
     width=(overthreshold[-1]-overthreshold[0]+1)*expandfactor;
-    ind1Y = np.round(center-width/2).astype(np.int)
-    ind2Y = np.round(center+width/2).astype(np.int)
-    ind1Y = np.amax([0,ind1Y]).astype(np.int)
-    ind2Y = np.amin([profileY.size,ind2Y]).astype(np.int)
+    ind1Y = np.round(center-width/2).astype(np.int32)
+    ind2Y = np.round(center+width/2).astype(np.int32)
+    ind1Y = np.amax([0,ind1Y]).astype(np.int32)
+    ind2Y = np.amin([profileY.size,ind2Y]).astype(np.int32)
    
     #Cropping the image using the calculated indices
     cropped=np.zeros((ind2Y-ind1Y,ind2X-ind1X))
