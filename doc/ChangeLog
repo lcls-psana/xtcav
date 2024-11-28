@@ -11,6 +11,15 @@ Package author: Alvaro Sanchez-Gonzalez
 Please describe any modifications that you made to the package in the
 reverse time order.
 
+Tag: V01-00-01
+2024-11-27 Mikhail Dubrovin
+- replace deprecated np.int > np.int32, np.float > np.float32, code cleaning
+	modified:   src/GenerateLasingOffReference.py
+	modified:   src/Utils.py - remove characters ^M from file
+
+Tag: V01-00-00
+Tag: V00-01-00
+
 Tag: V00-00-23
 2017-02-02 Clemens Weninger
 Fix: cast float arrays to int to make the code work with recent versions of
@@ -83,7 +92,7 @@ Tag: V00-00-14
 Fix crash when image was almost empty, so "physical units" PU['xfs']
 in Utils.py only had len(1).  Now mark those images as failed.
 
-From Alvaro Sanchez-Gonzalez	
+From Alvaro Sanchez-Gonzalez
 -Small bug corrected that was leading to bad behavior when the user tried to load a lasing off reference with the old variable names.
 -Added Test.py for running standard tests using python Tests.py on the main three classes. These tests are not exhaustive (they are not sophisticated unit tests of anything like that), as they do not test all possible combinations of paramentes, but at least they allow for a quick check. They require access to experiment 'amo86815'.
 -Add method InterBunchPulseDelayBasedOnCurrentMultiple.
@@ -148,21 +157,21 @@ Tag: V00-00-05
 Tag: V00-00-04
 2015-02-20 Christopher O'Grady
 - The latest changes from Alvaro:
-- Island separation improved to better discard islands coming from noise, 
+- Island separation improved to better discard islands coming from noise,
   and make it more robust in the determination of number of bunches.
-- Improved method to extract the delay: Now it does a fit around the 
+- Improved method to extract the delay: Now it does a fit around the
   maximum current
-- New method to extract the delay between the bunches, documented in the 
+- New method to extract the delay between the bunches, documented in the
   file.
 
 Tag: V00-00-03
 2014-12-05 Christopher O'Grady
 - The latest changes from Alvaro:
-- Included python-docstrings for the relevant classes/methods/functions 
-- Done some cleanup from the repo of some old files that were not longer 
+- Included python-docstrings for the relevant classes/methods/functions
+- Done some cleanup from the repo of some old files that were not longer
   in use.
-- Added a few more retrieval functions to the ShotToShotCharacterization 
-  class, all of them follow the format where the last argument is a flag 
+- Added a few more retrieval functions to the ShotToShotCharacterization
+  class, all of them follow the format where the last argument is a flag
   telling whether it was possible to retrieve the data
 - Solved minor bugs.
 
